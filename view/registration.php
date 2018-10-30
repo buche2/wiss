@@ -1,61 +1,56 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-	<meta charset="UTF-8">
-	<title>Registration</title>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-</head>
-<body>
-	<form action="" method="Get">
-				<label class="">Geschlecht</label><br>
-				<select class="" name="gender">
-					<option value="Männlich" selected>Männlich</option>
-					<option value="Weiblich">Weiblich</option>
-				</select><br><br>
-				<label class="" style="margin-right:7%;">Vorname</label>
-				<label class="">Nachname</label><br>
-				
-				<input class="" type="text" name="vorname" required>
-				<input class="" type="text" name="nachname" required><br><br>
-				
-				<label class="">Email</label><br>
-				<input  class="" id="email" type="text" name="email" required>
-				<br><br>
+<form action="" method="post" class="w-50 mx-auto my-2">
+	<div class="form-group">
+			<label for="gender">Geschlecht</label>
+			<select class="form-control" id="gender" name="gender">
+				<option value="Männlich" selected>Männlich</option>
+				<option value="Weiblich">Weiblich</option>
+			</select>
+	</div>
+	<div class="form-group">
+		<div class="form-row">
+			<div class="col">
+				<label for="firstname">Vorname</label>
+				<input class="form-control" type="text" id="firstname" name="firstname" required>
+			</div>
+			<div class="col">
+				<label for="lastname">Nachname</label>
+				<input class="form-control" type="text" id="lastname" name="lastname" required>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+			<label for="email">E-Mail</label><br>
+			<input  class="form-control" id="email" type="email" name="email" required>
+	</div>
+	<div class="form-group">
+			<label for="username">Username</label><br>
+			<input  class="form-control" id="username" type="text" name="username" required>
+	</div>
+	<div class="form-group">
+		<div class="form-row">
+			<div class="col">
+				<label for="password1">Passwort</label>
+				<input  class="form-control" id="password1" type="password" name="password" required pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}" title="Gross, Klein, Zahlen">
+			</div>
+			<div class="col">
+				<label for="password2">Passwort Bestätigen</label>
+				<input class="form-control" id="Password2" type="password" name="password2" required pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}" title="Gross, Klein, Zahlen">
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+			<label for="datepicker">Geburtsdatum</label>
+			<input type="text" id="datepicker" name="birthday" class="form-control">
+	</div>
+	<div class="form-check">
+	    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agb" value="accepted">
+	    <label class="form-check-label" for="exampleCheck1">Akzeptierst du die <a href="" target="_blank">AGB</a></label>
+  </div>
 
-				<label class="">Username</label><br>
-				<input  class="" id="username" type="text" name="username" required>
-				<br><br>
+	<button type="submit" class="btn btn-primary form-control">Submit</button>
 
-				<label class="" style="margin-right:7%;">Passwort</label>
-				<label id="" name="nachname">Passwort Bestätigen</label><br>
-				<input  class="" id="Password1" type="password" name="password" required pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}" title="Gross, Klein, Zahlen">
-				<input class="" id="Password2" type="password" name="password" required pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}" title="Gross, Klein, Zahlen">
-				<br><br>
-			
-				<label>Geburtsdatum<br><input type="text" id="datepicker"></label><br><br>
-			
-				<label class="">Akzeptierst du die <a href="" target="_blank">AGB</a></label>
-				<input  class="fmin" type="Checkbox" name="AGB" required>
-				<br><br>
-				
-				<a href="Index.php"><label>Doch Regristriert?</label></a><br><br>
-				
-				<input class="fmin" type="submit" value="Regristrieren">
+	<a href="index.php"><label>Doch Registriert?</label></a>
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
- 		$( function() {
-    		$( "#datepicker" ).datepicker();
-  		} );
-  </script>
-</body>
-</html>
+  <script>
+		$( "#datepicker" ).datepicker();
+	</script>
