@@ -1,5 +1,9 @@
 <?php
 
+namespace Wiss\Controller;
+
+use wiss\controller\AbstractController;
+
 class IndexController extends AbstractController{
 
   public function __construct(){

@@ -1,13 +1,20 @@
 <?php
+namespace wiss;
 
-  define('BASE_PATH', realpath(dirname(__FILE__)));
   function my_autoloader($class)
   {
-    $filename = BASE_PATH . '/controller/' . str_replace('\\', '/', $class) . '.php';
+    $clsArr = explode("\\",$class);
+    if(count($clsArr) > 3){
+      $clsArr = array_slice($clsArr, 2);
+      $class = implode("\\", $clsArr);
+    }
+    $filename = BASE_PATH . '/../' . str_replace('\\', '/', $class) . '.php';
     include($filename);
   }
-  spl_autoload_register('my_autoloader');
+  spl_autoload_register('wiss\my_autoloader');
 
+
+  define('BASE_PATH', realpath(dirname(__FILE__)));
 
   $controller = "index";
 
@@ -16,7 +23,7 @@
   }
   $controller = ucfirst($controller);
 
-  $controllerObjName = $controller."Controller";
+  $controllerObjName = '\\wiss\\controller\\'.$controller."Controller";
   $controllerObj = new $controllerObjName();
 
   if(isset($_GET['action']) && !empty($_GET['action'])){

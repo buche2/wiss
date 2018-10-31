@@ -1,4 +1,5 @@
 <form action="" method="post" class="w-50 mx-auto my-2">
+	<h1>Person registrieren</h1>
 	<div class="form-group">
 			<label for="gender">Geschlecht</label>
 			<select class="form-control" id="gender" name="gender">

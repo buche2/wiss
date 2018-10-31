@@ -1,5 +1,10 @@
 <?php
 
+namespace wiss\controller;
+
+use wiss\controller\AbstractController;
+use wiss\database\PDOConnection;
+
 class AuthController extends AbstractController{
 
   public $title = 'Auth';
@@ -10,7 +15,14 @@ class AuthController extends AbstractController{
 
   public function index(){
     $this->title = "Registration";
-    $content = parent::loadView('registration');
+
+    if(isset($_POST['username'])){
+      $pdo = new PDOConnection();
+
+    }else{
+      $content = parent::loadView('registration');
+    }
+
     parent::display($content);
   }
 

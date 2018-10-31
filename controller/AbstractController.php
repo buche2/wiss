@@ -1,5 +1,7 @@
 <?php
 
+namespace wiss\controller;
+
 abstract class AbstractController{
 
   protected function loadView($file){

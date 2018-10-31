@@ -1,5 +1,9 @@
 <?php
 
+namespace wiss\controller;
+
+use wiss\controller\AbstractController;
+
 class ForumController extends AbstractController{
 
   public $title = 'Forum';
