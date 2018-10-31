@@ -1,4 +1,4 @@
-<h1 class="mt-5">Wiss Form</h1>
+<h1 class="mt-5">Wiss Forum</h1>
         
         	<form method="get" action="?">
   				<input type="hidden" name="page" value="forum">
