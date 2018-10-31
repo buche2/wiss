@@ -1,8 +1,5 @@
-<div class="mx-auto">
+<form action="" method="post" onsubmit="" class="w-50 mx-auto my-2">
 	<h1>Login</h1>
-</div>
-
-<form action="" method="post" onsubmit="">
 	<div class="form-group">
 		<label for="email">E-Mail Adresse</label>
 		<input type="email" class="form-control" name="email" id="email" required>
@@ -19,6 +16,6 @@
 	</div>
 
 		<button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
-</form>
 
-<p>Alle Felder mit * müssen eingefügt werden</p>
+	<p>Alle Felder mit * müssen augefüllt werden!</p>
+</form>

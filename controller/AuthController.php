@@ -28,7 +28,7 @@ class AuthController extends AbstractController{
 
   public function login(){
     $title = "Login";
-    $content = parent::loadView('index');
+    $content = parent::loadView('login');
     parent::display($content);
   }
 
