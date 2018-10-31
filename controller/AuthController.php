@@ -21,10 +21,14 @@ class AuthController extends AbstractController{
 
       $this->users = $user->fetchAll();
 
-
+      $_SESSION['user'] = $this->users[0];
+      $content = parent::loadView('registration');
     }else{
+      if(isset($_SESSION['user']))
+        $this->users = array($_SESSION['user']);
       $content = parent::loadView('registration');
     }
+
 
     parent::display($content);
   }

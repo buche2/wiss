@@ -1,6 +1,8 @@
 <?php
 namespace wiss;
 
+session_start();
+
   function my_autoloader($class)
   {
     $clsArr = explode("\\",$class);
