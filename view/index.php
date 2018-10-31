@@ -1,21 +1,23 @@
-<h1 class="mt-5">Eine Beispielseite f&uuml;r die Weiterbearbeitung</h1>
-<p class="lead">Nachfolgend von diesem Text, wird ein Formular folgen.</p>
+<h1 class="mt-5" style="text-align:center;">Willkommen auf der Wissforum Webseite</h1>
+<p class="lead" style="text-align:center;">Hier auf dem Wissforum kannst du deinen Mitmenschen deine Fragen stellen, Probleme mitteilen, nach Hilfe fragen, eine Diskussion beginnen und noch vieles mehr.<br> Nun sag mir User:</p><br>
 
 <form action="" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div class="row justify-content-around">
+      <div class="col-4">
+        <div style="text-align:center;">
+          <label>Hast du schon ein Account? Dann Log dich ein!</label><br>          
+          <button type="submit" class="btn btn-primary"><a href="index.php?page=auth&action=login" style="color:white;text-decoration:none;">Einloggen</a></button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="text-align:center;">
+          <label>Bist du neu Hier? Dann Registrier dich!</label><br>
+          <button type="submit" class="btn btn-secondary"><a href="index.php?page=auth" style="color:white;text-decoration:none;">Registrieren</a></button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+<br>
 <p>Back to <a href="https://www.wiss.ch/de-CH">WISS Webseite</a></p>
