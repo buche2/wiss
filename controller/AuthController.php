@@ -3,7 +3,7 @@
 namespace wiss\controller;
 
 use wiss\controller\AbstractController;
-use wiss\database\PDOConnection;
+use wiss\model\UserModel;
 
 class AuthController extends AbstractController{
 
@@ -17,7 +17,10 @@ class AuthController extends AbstractController{
     $this->title = "Registration";
 
     if(isset($_POST['username'])){
-      $pdo = new PDOConnection();
+      $user = new UserModel();
+
+      $this->users = $user->fetchAll();
+
 
     }else{
       $content = parent::loadView('registration');
