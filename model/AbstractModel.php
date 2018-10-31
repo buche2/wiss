@@ -23,7 +23,7 @@ class AbstractModel{
     return $this->intoVariables($result);
   }
 
-  protected function intoVariables($array){
+  public function intoVariables($array){
     $resultSet = array();
     $reflectionClass = new \ReflectionClass($this->class);
     foreach($array as $children){
