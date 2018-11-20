@@ -3,12 +3,16 @@ package ch.wiss.sort;
 
 public class Quicksort {
 
-    public static <T extends Comparable> T[] sort(T[] toSort, int left, int right){
+    public static <T extends Comparable> T[] sort(T[] toSort){
+        return sortDAC(toSort,0, toSort.length-1);
+    }
+
+    private static <T extends Comparable> T[] sortDAC(T[] toSort, int left, int right){
         if (left < right) {
             int pivotPosition = split(toSort, left, right);
 
-            sort(toSort, left, pivotPosition - 1);
-            sort(toSort, pivotPosition + 1, right);
+            sortDAC(toSort, left, pivotPosition - 1);
+            sortDAC(toSort, pivotPosition + 1, right);
         }
 
         return toSort;

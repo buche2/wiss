@@ -15,7 +15,7 @@ public class Third {
 
         Person[] personArray = new Person[]{new Person("Hans",50),new Person("Enrico",35), new Person("Albi",80)};
         Person.setSortBy("age");
-        for(Person p : Quicksort.<Person>sort(personArray,0,personArray.length-1)){
+        for(Person p : Quicksort.<Person>sort(personArray)){
             System.out.println(p);
         }
 
