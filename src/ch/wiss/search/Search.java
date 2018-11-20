@@ -24,7 +24,7 @@ public class Search {
 
         System.out.println(System.currentTimeMillis()-before);
 
-        container = Quicksort.<Integer>sort(container,0, container.length-1);
+        container = Quicksort.<Integer>sort(container);
 
         before = System.currentTimeMillis();
 
