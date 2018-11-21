@@ -46,6 +46,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.php?page=forum">Forum <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php?page=shop">Shop <span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="index.php?page=kontakt">Kontakt</a>
             </li>
