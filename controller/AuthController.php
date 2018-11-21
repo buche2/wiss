@@ -18,8 +18,13 @@ class AuthController extends AbstractController{
     $this->title = "Registration";
 
     if(isset($_POST['username'])){
-      
-      $content = parent::loadView('registration');
+      $usermodel = new UserModel();
+      $_POST['birthdate'] = (new \DateTime($_POST['birthdate']))->format('Y-m-d');
+      $usermodel->intoVariables([$_POST]);
+      if($usermodel->save())
+        $content = parent::loadView('index');
+      else
+        $content = parent::loadView('registration');
     }else{
 
 

@@ -1,13 +1,10 @@
-<?php var_dump($this->users->username);
-//var_dump($this->users); ?>
-
 <form action="" method="post" class="w-50 mx-auto my-2">
 	<h1>Person registrieren</h1>
 	<div class="form-group">
 			<label for="gender">Geschlecht</label>
 			<select class="form-control" id="gender" name="gender">
-				<option value="Männlich" selected>Männlich</option>
-				<option value="Weiblich">Weiblich</option>
+				<option value="Herr" selected>Männlich</option>
+				<option value="Frau">Weiblich</option>
 			</select>
 	</div>
 	<div class="form-group">
@@ -44,7 +41,7 @@
 	</div>
 	<div class="form-group">
 			<label for="datepicker">Geburtsdatum</label>
-			<input type="text" id="datepicker" name="birthday" class="form-control">
+			<input type="text" id="datepicker" name="birthdate" class="form-control">
 	</div>
 	<div class="form-check">
 	    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agb" value="accepted">
