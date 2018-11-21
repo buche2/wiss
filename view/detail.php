@@ -19,12 +19,8 @@
   </div>
 </div>
 <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
-<div class="Bestät">
-</div>
 <script>
   function myFunction() {
-    document.getElementById("Bestät").innerHTML = < div class = "alert alert-success" >
-      <
-      strong > Success! < /strong> Ihr Atikel ist jetzt im Warenkorb;  </div >
+    alert("Success! Ihr Atikel ist jetzt im Warenkorb");
   }
 </script>
