@@ -49,6 +49,7 @@ class AbstractModel{
         $values[] = $reflectionClass->getProperty($pk)->getValue($this);
 
         $prepared->execute($values);
+        return true;
       }else{
         $ignore = $this->ignoreFields;
         $ignore[] = $pk;
@@ -67,9 +68,10 @@ class AbstractModel{
         $prepared = $this->pdo->prepare("insert into " . $this->table . " ($variables) values ($countvalues);");
 
         $prepared->execute($values);
+        return true;
       }
     }
-
+    return false;
   }
 
   public function delete($pk='id'){
@@ -114,8 +116,15 @@ class AbstractModel{
         if($reflectionClass->hasProperty($key)){
           $property = $reflectionClass->getProperty($key);
           $property->setAccessible(true);
-          $property->setValue($obj, $value);
+          if(count($array) == 1){
+            $property->setValue($this, $value);
+          }else{
+            $property->setValue($obj, $value);
+          }
         }
+      }
+      if(count($array) == 1){
+        return $this;
       }
       $resultSet[] = $obj;
     }
