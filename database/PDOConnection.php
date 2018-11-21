@@ -13,8 +13,9 @@ class PDOConnection extends \PDO
         ((!empty($settings['database']['port'])) ? (';port=' . $settings['database']['port']) : '') .
         ';dbname=' . $settings['database']['schema'];
 
-        parent::__construct($dns, $settings['database']['username'], $settings['database']['password']);
+        parent::__construct($dns, $settings['database']['username'], $settings['database']['password'],array(\PDO::ATTR_PERSISTENT => TRUE));
     }
+
 }
 
 ?>

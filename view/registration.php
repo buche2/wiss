@@ -1,4 +1,5 @@
-<?php //var_dump($this->users[0]->username); ?>
+<?php var_dump($this->users->username);
+//var_dump($this->users); ?>
 
 <form action="" method="post" class="w-50 mx-auto my-2">
 	<h1>Person registrieren</h1>

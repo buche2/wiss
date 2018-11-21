@@ -4,6 +4,7 @@ namespace wiss\controller;
 
 use wiss\controller\AbstractController;
 use wiss\model\UserModel;
+use wiss\helper\Session;
 
 class AuthController extends AbstractController{
 
@@ -17,15 +18,12 @@ class AuthController extends AbstractController{
     $this->title = "Registration";
 
     if(isset($_POST['username'])){
-      $user = new UserModel();
-
-      $this->users = $user->fetchAll();
-
-      $_SESSION['user'] = $this->users[0];
+      
       $content = parent::loadView('registration');
     }else{
-      if(isset($_SESSION['user']))
-        $this->users = array($_SESSION['user']);
+
+
+
       $content = parent::loadView('registration');
     }
 

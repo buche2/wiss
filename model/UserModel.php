@@ -7,7 +7,7 @@ use wiss\model\AbstractModel;
 class UserModel extends AbstractModel{
 
   public $id;
-  public $name;
+  public $lastname;
   public $firstname;
   public $gender;
   public $email;
