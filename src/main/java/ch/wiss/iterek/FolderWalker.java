@@ -10,7 +10,7 @@ public class FolderWalker {
         List<File> files = Folder.listFiles(new File("/home/ebuchs/Dokumente"));
 
         for(File f : files){
-            System.out.print(f.getName());
+            System.out.print(f.getAbsolutePath());
             System.out.println();
         }
 

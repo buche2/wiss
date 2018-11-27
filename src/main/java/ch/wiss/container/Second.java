@@ -5,7 +5,7 @@ public class Second {
     public static void main(String[] args) {
 
         try {
-            Container<Integer> container = new Stack<>();
+            Container<Integer> container = new Stack<Integer>();
             container.push(1);
             container.push(2);
             container.push(3);
