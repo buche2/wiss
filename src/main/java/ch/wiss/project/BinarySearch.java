@@ -1,6 +1,4 @@
-package ch.wiss.search;
-
-import java.util.List;
+package ch.wiss.project;
 
 public class BinarySearch {
 

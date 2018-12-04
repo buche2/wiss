@@ -1,4 +1,4 @@
-package ch.wiss.sort;
+package ch.wiss.project;
 
 
 public class Quicksort {
