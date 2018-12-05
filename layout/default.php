@@ -63,8 +63,19 @@
           if(Session::has('auth')){
             $username = Session::get('auth')->username;
             echo <<<EOF
-              <div>
-                <span style="color:white;">Willkommen {$username}</span><a href="index.php?page=auth&action=logout">Logout</a>
+              <div style="padding-right:1%;">
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Willkommen {$username}
+                </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Profil bearbeiten</a>
+                    <a class="dropdown-item" href="#">Privatsphäre</a>
+                    <a class="dropdown-item" href="index.php?page=auth&action=logout">Logout</a>
+                  </div>
+                </div>
+
+                <!--<a href="index.php?page=auth&action=logout">Logout</a>-->
               </div>
 EOF;
           }
