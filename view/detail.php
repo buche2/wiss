@@ -10,7 +10,7 @@
       </dl>
     </div>
     <div class="Name">
-      <h3>ASUS</h3>
+      <h3><?php echo $this->product->name ?></h3>
       <p> ROG Strix SCAR II GL504GM-ES155T (15.60", Full HD, Intel Core i7-8750H, 16GB, SSD, HDD)</p>
     </div>
     <div class="Beschreibung">
