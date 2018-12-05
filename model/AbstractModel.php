@@ -87,15 +87,15 @@ class AbstractModel{
   }
 
   /**
-   * arguments is get or post array which is used in where from select
+   * @param $where is get or post array which is used in where from select
    */
-  public function select($arguments){
+  public function where($where){
     $reflectionClass = new \ReflectionClass($this->class);
 
     $query = 'select * from ' . $this->table . ' where ';
     $values = [];
 
-    foreach($arguments as $key => $value){
+    foreach($where as $key => $value){
       if($reflectionClass->hasProperty($key)){
         if(count($values)){
             $query .= ' and ';

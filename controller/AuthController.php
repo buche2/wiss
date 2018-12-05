@@ -45,7 +45,7 @@ class AuthController extends AbstractController{
     if(Request::isPost()){
       $usermodel = new UserModel();
       $usermodel->intoVariables([Request::getPost()]);
-      $usermodel->select(Request::getPost());
+      $usermodel->where(Request::getPost());
       if($usermodel->id){
         Session::save('auth',$usermodel);
         $content = parent::loadView('index');
