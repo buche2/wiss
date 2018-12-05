@@ -86,6 +86,34 @@ class AbstractModel{
     return false;
   }
 
+  /**
+   * @param $where is get or post array which is used in where from select
+   */
+  public function where($where){
+    $reflectionClass = new \ReflectionClass($this->class);
+
+    $query = 'select * from ' . $this->table . ' where ';
+    $values = [];
+
+    foreach($where as $key => $value){
+      if($reflectionClass->hasProperty($key)){
+        if(count($values)){
+            $query .= ' and ';
+        }
+        $query .= $key . ' = ? ';
+        $values[] = $value;
+      }
+    }
+
+    $prepared = $this->pdo->prepare($query);
+    $prepared->execute($values);
+
+    $result = $prepared->fetchAll(\PDO::FETCH_ASSOC);
+
+    return $this->intoVariables($result);
+  }
+
+
 
   public function fetchOne($pk='id'){
     $reflectionClass = new \ReflectionClass($this->class);
