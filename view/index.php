@@ -36,13 +36,13 @@ if(!Session::has('auth')){
       <div class="col-4">
         <div style="text-align:center;">
           <label>Willst du aufs Forum?<br> Dann Klick hier!</label><br>
-          <button type="submit" class="btn btn-primary"><a href="index.php?page=auth&action=forum" style="color:white;text-decoration:none;">Forum</a></button>
+          <button type="submit" class="btn btn-primary"><a href="index.php?page=forum" style="color:white;text-decoration:none;">Forum</a></button>
         </div>
       </div>
       <div class="col-4">
         <div style="text-align:center;">
           <label>Willst du unser tollen Produkte kaufen?<br> Dann Klick hier!</label><br>
-          <button type="submit" class="btn btn-secondary"><a href="index.php?page=auth&action=shop" style="color:white;text-decoration:none;">Shop</a></button>
+          <button type="submit" class="btn btn-secondary"><a href="index.php?page=shop" style="color:white;text-decoration:none;">Shop</a></button>
         </div>
       </div>
     </div>
