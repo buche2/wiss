@@ -26,9 +26,12 @@ if(!Session::has('auth')){
   </div>
 </form>
 <?php }else{
-
-  echo "Willkommen " . Session::get('auth')->username;
-
+  $username = Session::get('auth')->username;
+  echo <<<EOF
+  <div>
+    <p>Willkommen {$username}</p>
+  </div>
+EOF;
 } ?>
 <br>
 <p>Back to <a href="https://www.wiss.ch/de-CH">WISS Webseite</a></p>
