@@ -16,4 +16,8 @@ class Session{
     $_SESSION[$key] = serialize($value);
   }
 
+  public static function delete(){
+    session_destroy();
+  }
+
 }

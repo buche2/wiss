@@ -55,4 +55,9 @@ class AuthController extends AbstractController{
     parent::display($content);
   }
 
+  public function logout(){
+    SESSION::delete();
+  }
+
+
 }
