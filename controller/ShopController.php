@@ -14,7 +14,7 @@ class ShopController extends AbstractController{
 
   public function index(){
     $this->title = "Shop";
-    $content = parent::loadView('Shop');
+    $content = parent::loadView('shop');
     parent::display($content);
   }
 
