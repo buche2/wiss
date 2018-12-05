@@ -1,7 +1,7 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-<?php
+    <?php
        echo <<<EOF
     <div class="IMG">
       <img src="{$product->picture}" class="float-left" alt="" width="150" height="130">
@@ -22,9 +22,9 @@
 </div>
 <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
 EOF;
-    } ?>
-<script>
-  function myFunction() {
-    alert("Success! Ihr Atikel ist jetzt im Warenkorb");
-  }
-</script>
+ ?>
+    <script>
+      function myFunction() {
+        alert("Success! Ihr Atikel ist jetzt im Warenkorb");
+      }
+    </script>
