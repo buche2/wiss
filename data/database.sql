@@ -5,7 +5,7 @@ create table User (id int not null auto_increment primary key, gender enum('Herr
 
 create table Forum (id int not null auto_increment primary key, user_id int not null, title varchar(100) not null, category varchar(150), content varchar(5000) not null, FOREIGN KEY(user_id) REFERENCES User(id));
 
-create table Product(id int not null auto_increment primary key, name varchar(40) not null, product_sdesc varchar(100) not null, product_ldesc varchar(1500), price float(0.05) not null, picture varchar);
+create table Product(id int not null auto_increment primary key, name varchar(40) not null, product_sdesc varchar(100) not null, product_ldesc varchar(1500), price float(0.05) not null, picture varchar(2000));
 
 create table Order (id int not null auto_increment primary key, user_id int not null, order_date date not null, d_date date, p_state boolean not null, FOREIGN KEY(user_id) REFERENCES User(id));
 
