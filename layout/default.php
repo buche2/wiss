@@ -56,6 +56,21 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>-->
           </ul>
+          <?php
+
+          use wiss\helper\Session;
+
+          if(Session::has('auth')){
+            $username = Session::get('auth')->username;
+            echo <<<EOF
+              <div>
+                <span style="color:white;">Willkommen {$username}</span><a href="index.php?page=auth&action=logout">Logout</a>
+              </div>
+EOF;
+          }
+           ?>
+  
+
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
