@@ -1,12 +1,18 @@
 <h1 class="mt-5" style="text-align:center;">Willkommen auf der Wissforum Webseite</h1>
-<p class="lead" style="text-align:center;">Hier auf dem Wissforum kannst du deinen Mitmenschen deine Fragen stellen, Probleme mitteilen, nach Hilfe fragen, eine Diskussion beginnen und noch vieles mehr.<br> Nun sag mir User:</p><br>
+<p class="lead" style="text-align:center;">Hier auf dem Wissforum kannst du deinen Mitmenschen deine Fragen stellen, Probleme mitteilen, nach Hilfe fragen, eine Diskussion beginnen und noch vieles mehr.</p><br>
 
+<?php
+
+use wiss\helper\Session;
+
+if(!Session::has('auth')){
+ ?>
 <form action="" method="post">
   <div class="form-group">
     <div class="row justify-content-around">
       <div class="col-4">
         <div style="text-align:center;">
-          <label>Hast du schon ein Account? Dann Log dich ein!</label><br>          
+          <label>Hast du schon ein Account? Dann Log dich ein!</label><br>
           <button type="submit" class="btn btn-primary"><a href="index.php?page=auth&action=login" style="color:white;text-decoration:none;">Einloggen</a></button>
         </div>
       </div>
@@ -19,5 +25,10 @@
     </div>
   </div>
 </form>
+<?php }else{
+
+  echo "Willkommen " . Session::get('auth')->username;
+
+} ?>
 <br>
 <p>Back to <a href="https://www.wiss.ch/de-CH">WISS Webseite</a></p>
