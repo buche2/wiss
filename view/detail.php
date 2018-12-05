@@ -1,24 +1,28 @@
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+<?php
+       echo <<<EOF
     <div class="IMG">
-      <img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c04938915.png" class="float-left" alt="" width="150" height="130">
+      <img src="{$product->picture}" class="float-left" alt="" width="150" height="130">
     </div>
     <div class="Preis">
       <dl>
-        <dt>1699.–</dt>
-        <dd>- statt vorher 1899.–</dd>
+        <dt>{$product->price}</dt>
       </dl>
     </div>
     <div class="Name">
-      <h3><?php echo $this->product->name ?></h3>
-      <p> ROG Strix SCAR II GL504GM-ES155T (15.60", Full HD, Intel Core i7-8750H, 16GB, SSD, HDD)</p>
+      <h3>{$product->name}</h3>
+      <p> {$product->product_sdesc}</p>
     </div>
     <div class="Beschreibung">
-      <p>Auf den Spuren seines legendären Vorgängers, kommt der ROG Strix SCAR II mit noch mehr Power und Style für Dein FPS esports Gaming. Das weltweit erste 144HZ Display mit super dünnem Rahmen und ultraschneller 3ms gray-to-gray Reaktionszeit.</p>
+      <p>{$product->product_ldesc}</p>
     </div>
   </div>
 </div>
 <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
+EOF;
+    } ?>
 <script>
   function myFunction() {
     alert("Success! Ihr Atikel ist jetzt im Warenkorb");
