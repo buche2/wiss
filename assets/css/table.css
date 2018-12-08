@@ -1,0 +1,10 @@
+navbar navbar-inverse, navbar-fixed-top, navbar-header, navbar{
+    background: dodgerblue;
+}
+
+body, html{
+    width: 100vw;
+    heigth: 100vh;
+    margin: 0;
+    padding: 0;
+}
