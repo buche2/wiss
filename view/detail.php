@@ -3,19 +3,21 @@
     <?php
        echo <<<EOF
         <div class="IMG">
-          <img src="assets/img/Products/{$this->product->id}.jpg" onerror="myError()" class="float-left" alt="" width="150" height="150">
+          <img src="assets/img/Products/{$this->product->id}.jpg" onerror="myError()" class="float-left" alt="" hspace="20" width="150" height="150" >
         </div>
-          <div class="Preis">
+        <div class="Name">
+          <h3>{$this->product->name}</h3>
+        <div class="Preis">
             <dl>
               <dt>{$this->product->price}.- CHF</dt>
             </dl>
           </div>
-        <div class="Name">
-          <h3>{$this->product->name}</h3>
           <p> {$this->product->product_sdesc}</p>
         </div>
         <div class="Beschreibung">
-          <p>{$this->product->product_ldesc}</p>
+        </br>
+        </br>
+          <p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">{$this->product->product_ldesc}</p>
         </div>
 
         <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
