@@ -18,6 +18,8 @@ class Session{
 
   public static function delete(){
     session_destroy();
+    foreach($_SESSION as $key => $value)
+      session_unset($_SESSION[$key]);
   }
 
 }
