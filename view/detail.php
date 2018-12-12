@@ -3,7 +3,7 @@
     <?php
        echo <<<EOF
         <div class="IMG">
-          <img src="{$this->product->picture}" class="float-left" alt="" width="150" height="130">
+          <img src="{$this->product->picture}.- CHF" onerror="this.src='imagenotavailable.jpg'" class="float-left" alt="" width="150" height="130">
         </div>
           <div class="Preis">
             <dl>
