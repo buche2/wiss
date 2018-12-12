@@ -7,7 +7,7 @@
     foreach($this->entries as $entry){
     echo <<<EOF
       <div class="container border border-success rounded mt-2">
-   	 	  <div class="container border-bottom border-success">{$entry->title} | {$entry->category} | "Date" | Mojin</div>
+   	 	  <div class="container border-bottom border-success">{$entry->title} | {$entry->category} | "Date" | {$entry->user->username}</div>
     	  <div class="container py-2">{$entry->content}</div>
         <div class="container border-top border-success">
           <a href="index.php?page=forum&action=add" style="text-decoration:none;">Antwort</a>

@@ -4,6 +4,7 @@ namespace wiss\controller;
 
 use wiss\controller\AbstractController;
 use wiss\model\ForumModel;
+use wiss\model\UserModel;
 use wiss\helper\Request;
 
 class ForumController extends AbstractController{
@@ -19,7 +20,7 @@ class ForumController extends AbstractController{
 
     $entry = new ForumModel();
 
-    $this->entries = $entry->fetchAll();
+    $this->entries = $entry->fetchAll([new UserModel()]);
 
     $content = parent::loadView('forum');
     parent::display($content);
@@ -28,7 +29,7 @@ class ForumController extends AbstractController{
 
   public function add(){
     $this->title = "Neuer Eintrag";
-    
+
     $entry = new ForumModel();
 
     $this->entries = $entry->where(Request::getGet());

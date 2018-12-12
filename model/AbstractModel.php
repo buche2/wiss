@@ -15,6 +15,14 @@ class AbstractModel{
     return $this->pdo;
   }
 
+  public function getTableName(){
+    return $this->table;
+  }
+
+  public function getClass(){
+    return $this->class;
+  }
+
   public function __sleep(){
     return array_diff(array_keys(get_object_vars($this)), $this->ignoreFields);
   }
@@ -128,18 +136,93 @@ class AbstractModel{
     return null;
   }
 
+  /*
   public function fetchAll(){
     $prepared = $this->pdo->prepare("select * from " . $this->table );
     $prepared->execute();
     $result = $prepared->fetchAll(\PDO::FETCH_ASSOC);
     return $this->intoVariables($result);
   }
+  */
 
-  public function intoVariables($array){
+  public function fetchAll($joinObjectsArray=[],$where=[]){
+    $reflectionClass = new \ReflectionClass($this->class);
+
+    $attributes = [$this->table => ['*']];
+
+    $joins = '';
+    foreach($joinObjectsArray as $joinObject){
+      if($reflectionClass->hasProperty(strtolower($joinObject->getTableName()."_id"))){
+        $joins .= ' left join ' . $joinObject->getTableName() . ' on ' . $this->table . '.'.
+          strtolower($joinObject->getTableName()."_id") . ' = ' . $joinObject->getTableName() . '.id ';
+
+          $attributes[$joinObject->getTableName()] = [];
+
+          $fields = array_diff(array_keys(get_object_vars($joinObject)), $this->ignoreFields);
+          foreach($fields as $field){
+            $attributes[$joinObject->getTableName()][$joinObject->getTableName().$field] = $field;
+          }
+      }
+    }
+
+    $attributesString = '';
+    $counter = 0;
+    foreach($attributes as $table => $attribute){
+      foreach($attribute as $key => $single){
+        if($counter++ > 0)
+          $attributesString .= ',';
+        if(!is_numeric($key)){
+          $attributesString .= $table . '.' . $single . ' as ' . $key;
+        } else {
+          $attributesString .= $table . '.' . $single;
+        }
+      }
+    }
+
+    $query = "select ".$attributesString." from " . $this->table . $joins;
+
+    $query .= (count($where))?' where ': '';
+
+    $values = [];
+
+    foreach($where as $key => $value){
+      if($reflectionClass->hasProperty($key)){
+        if(count($values)){
+            $query .= ' and ';
+        }
+        $query .= $this->table.'.'.$key . ' = ? ';
+        $values[] = $value;
+      }
+    }
+
+    $prepared = $this->pdo->prepare($query);
+    $prepared->execute($values);
+
+
+    $result = $prepared->fetchAll(\PDO::FETCH_ASSOC);
+
+    return $this->intoVariables($result, $joinObjectsArray);
+  }
+
+  public function intoVariables($array, $joinObjectsArray=[]){
     $resultSet = array();
     $reflectionClass = new \ReflectionClass($this->class);
     foreach($array as $children){
       $obj = new $this->class;
+
+      $tableNames = [];
+      if(count($joinObjectsArray)){
+        foreach($joinObjectsArray as $joinObject){
+          $className = $joinObject->getClass();
+          if(count($array) == 1){
+            $this->{strtolower($joinObject->getTableName())} = new $className;
+          }else{
+            $obj->{strtolower($joinObject->getTableName())} = new $className;
+          }
+          $tableNames[] = strtolower($joinObject->getTableName());
+        }
+      }
+
       foreach($children as $key => $value){
         if($reflectionClass->hasProperty($key)){
           $property = $reflectionClass->getProperty($key);
@@ -148,6 +231,27 @@ class AbstractModel{
             $property->setValue($this, $value);
           }else{
             $property->setValue($obj, $value);
+          }
+        }else if(count($tableNames)) {
+          foreach($joinObjectsArray as $joinObject){
+            if( strpos( $key, $joinObject->getTableName() ) !== false) {
+              if(count($array) == 1){
+                $tmpReflecionClass = new \ReflectionClass($this->{strtolower($joinObject->getTableName())});
+              }else{
+                $tmpReflecionClass = new \ReflectionClass($obj->{strtolower($joinObject->getTableName())});
+              }
+              $attribute = str_replace($joinObject->getTableName(), '', $key);
+              if($tmpReflecionClass->hasProperty($attribute)){
+                $property = $tmpReflecionClass->getProperty($attribute);
+                $property->setAccessible(true);
+                if(count($array) == 1){
+                  $property->setValue($this->{strtolower($joinObject->getTableName())}, $value);
+                }else{
+                  $property->setValue($obj->{strtolower($joinObject->getTableName())}, $value);
+                }
+                break;
+              }
+            }
           }
         }
       }
