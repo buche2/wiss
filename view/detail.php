@@ -3,11 +3,11 @@
     <?php
        echo <<<EOF
         <div class="IMG">
-          <img src="{$this->product->picture}.- CHF" onerror="this.src='imagenotavailable.jpg'" class="float-left" alt="" width="150" height="130">
+          <img src="assets/img/Products/{$this->product->id}.jpg" onerror="myError()" class="float-left" alt="" width="150" height="150">
         </div>
           <div class="Preis">
             <dl>
-              <dt>{$this->product->price}</dt>
+              <dt>{$this->product->price}.- CHF</dt>
             </dl>
           </div>
         <div class="Name">
@@ -27,5 +27,8 @@ EOF;
 <script>
   function myFunction() {
     alert("Success! Ihr Atikel ist jetzt im Warenkorb");
+  }
+  function myError() {
+    this.src="assets/img/imagenotavailable.jpg";
   }
 </script>
