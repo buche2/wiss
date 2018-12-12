@@ -1,4 +1,4 @@
-<form action="" method="post" class="w-50 mx-auto my-2">
+<form action="" method="post" class="mx-auto my-2">
 	<h1>Schreiben sie einen neuen Eintrag</h1>
 	<div class="form-group">
 			<label for="titel">Titel:</label>

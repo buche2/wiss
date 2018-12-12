@@ -1,1 +1,1 @@
-ALTER TABLE forum ADD entry_date Date;
+ALTER TABLE Forum ADD entry_date Date;

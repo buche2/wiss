@@ -38,7 +38,7 @@ class ForumController extends AbstractController{
       $entry->intoVariables([Request::getPost()]);
 
       if($entry->save())
-        $content = parent::loadView('index');
+        return header('Location: ?page=forum');
       else
         $content = parent::loadView('eintrag');
     
