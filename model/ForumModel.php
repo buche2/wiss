@@ -11,5 +11,6 @@ class ForumModel extends AbstractModel{
   public $title;
   public $category;
   public $content;
+  public $entry_date;
   
 }

@@ -1,0 +1,1 @@
+ALTER TABLE forum ADD entry_date Date;

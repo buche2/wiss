@@ -6,6 +6,7 @@ use wiss\controller\AbstractController;
 use wiss\model\ForumModel;
 use wiss\model\UserModel;
 use wiss\helper\Request;
+use wiss\helper\Session;
 
 class ForumController extends AbstractController{
 
@@ -30,12 +31,23 @@ class ForumController extends AbstractController{
   public function add(){
     $this->title = "Neuer Eintrag";
 
-    $entry = new ForumModel();
+    if(Request::isPost()){
+      $entry = new ForumModel();
+      $_POST['user_id'] = Session::get("auth")->id;
+      $_POST['entry_date'] = (new \DateTime())->format('Y-m-d');
+      $entry->intoVariables([Request::getPost()]);
 
-    $this->entries = $entry->where(Request::getGet());
-
-    $content = parent::loadView('eintrag');
+      if($entry->save())
+        $content = parent::loadView('index');
+      else
+        $content = parent::loadView('eintrag');
+    
+    } 
+    else {
+      $content = parent::loadView('eintrag');
+    }
     parent::display($content);
+  
   }
 
 }
