@@ -12,6 +12,19 @@
 			<label for="eintrag">Eintrag:</label>
 			<textarea type="text" class="form-control" name="eintrag" id="eintrag" required rows="10"></textarea>
 	</div>
-	<button type="submit" class="btn">Submit</button>
+	<button onclick="function getDate();" type="submit" class="btn">Submit</button>
 </form>
 <br>
+
+<script>
+   var time = new Date();
+
+   function getDate() {
+   var year = time.getYear()+1900;
+   var month = time.getMonth()+1;
+   var day = time.getDate();
+   var date = year + "-" + month + "-" + day;
+
+   return date;
+   };
+ </script>

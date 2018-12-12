@@ -19,7 +19,7 @@ class ShopController extends AbstractController{
 
     $product = new ProductModel();
 
-    $this->product = $product->where(Request::getGet());
+    $this->products = $product->where(Request::getGet());
 
     $content = parent::loadView('detail');
     parent::display($content);

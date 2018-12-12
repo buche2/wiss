@@ -17,11 +17,6 @@
 EOF;
 } ?>
 
-<!-- <script>
-   var time = new Date();
-   document.write(d.getDate()+"."+d.getMonth()+"."+(d.getYear()+2000));
- </script> -->
-
 <script>
   $(".show").click(function(){
     $("."+$(this).attr('id')).toggle();
