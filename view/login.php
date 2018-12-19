@@ -1,4 +1,4 @@
-<form action="" method="post" onsubmit="" class="w-50 mx-auto my-2">
+<form action="" method="post" class="w-50 mx-auto my-2">
 	<h1>Login</h1>
 	<div class="form-group">
 		<label for="email">E-Mail Adresse*</label>

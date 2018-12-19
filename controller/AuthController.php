@@ -39,7 +39,6 @@ class AuthController extends AbstractController{
 
   public function login(){
     $title = "Login";
-
     $content = parent::loadView('login');
 
     if(Request::isPost()){
@@ -61,5 +60,21 @@ class AuthController extends AbstractController{
     parent::display($content);
   }
 
+  public function edit(){
+      $title = "Edit profile";
+      $content = parent::loadView('edit');
 
+    if(Request::isPost()){
+        $usermodel = new UserModel();
+        $usermodel->intoVariables([Request::getPost()]);
+        $usermodel->where(Request::getPost());
+        if($usermodel->id){
+          Session::save('auth',$usermodel);
+          $content = parent::loadView('index');
+        }
+        else
+          $content = parent::loadView('edit');
+
+        parent::display($content);
+  }
 }

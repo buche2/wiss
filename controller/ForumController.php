@@ -23,6 +23,9 @@ class ForumController extends AbstractController{
 
     $this->entries = $entry->fetchAll([new UserModel()]);
 
+    if(!is_array($this->entries))
+      $this->entries = [$this->entries];
+
     $content = parent::loadView('forum');
     parent::display($content);
   }
