@@ -69,7 +69,7 @@
                 Willkommen {$username}
                 </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Profil bearbeiten</a>
+                    <a class="dropdown-item" href="index.php?page=auth&action=edit">Profil bearbeiten</a>
                     <a class="dropdown-item" href="#">Privatsphäre</a>
                     <a class="dropdown-item" href="index.php?page=auth&action=logout">Logout</a>
                   </div>
