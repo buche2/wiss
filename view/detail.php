@@ -3,7 +3,7 @@
     <?php
        echo <<<EOF
         <div class="IMG">
-          <img src="assets/img/Products/{$this->product->id}.jpg" onerror="myError()" class="float-left" alt="" hspace="20" width="150" height="150" >
+          <img src="assets/img/Products/{$this->product->id}.jpg" onerror="myError()" class="rounded float-left" alt="" hspace="20" width="400" height="400">
         </div>
         <div class="Name">
           <h3>{$this->product->name}</h3>
@@ -11,15 +11,14 @@
             <dl>
               <dt>{$this->product->price}.- CHF</dt>
             </dl>
-          </div>
+        </div>
           <p> {$this->product->product_sdesc}</p>
         </div>
+        </br>
+        </br>
         <div class="Beschreibung">
-        </br>
-        </br>
-          <p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">{$this->product->product_ldesc}</p>
+          <p>{$this->product->product_ldesc}</p>
         </div>
-
         <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
 EOF;
 ?>
