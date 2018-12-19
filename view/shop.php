@@ -2,6 +2,12 @@
   <div class="row">
     <?php
     foreach($this->products as $product){
+      $filename = 'assets/img/Products/'.$this->product->id.'.jpg';
+      if (file_exists($filename)) {
+        $filename;
+      } else {
+        $filename = 'assets/img/imagenotavailable.jpg';
+      }
       echo <<<EOF
         <div class="col-lg-4 mb-4">
           <div class="card text-center" style="width:100%;height:100%;">
@@ -15,7 +21,7 @@
           </div>
         </div>
 EOF;
-    } 
+    }
     ?>
   </div>
 </div>
