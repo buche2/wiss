@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="assets/favicon/favicon.ico">
 
     <link rel="stylesheet" href="assets/css/frameworks/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/frameworks/bootstrap-theme.min.css">

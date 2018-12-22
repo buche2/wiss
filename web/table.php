@@ -35,13 +35,11 @@ if(isset($_POST['room_name'])){
     <br>
 
     <!-- Button, der das Modal aufruft -->
-    <button type="button" class="btn btn-success" data-toggle="modal">
-        Start Messung
-    </button>
+    <button id="btn_start_stop" type="button" class="btn btn-success">Start Messung</button>
 
-    <button type="button" class="btn btn-danger" data-toggle="modal">
+    <!--<button type="button" class="btn btn-danger" data-toggle="modal">
         Ende
-    </button>
+    </button>-->
 
     <!-- Tabelle -->
     <table class="table table-striped" cellspacing="0" width="100%">
@@ -55,25 +53,7 @@ if(isset($_POST['room_name'])){
             <th class="text-white" scope="col">Luftfeuchtigkeit</th>
         </tr>
         </thead>
-        <tbody>
-            <tr><td>Zimmer 13</td><td>25.November 2018 11:30</td><td>23.3°</td><td>50%</td></tr>
-            <tr><td>Zimmer 13</td><td>25.November 2018 11:30</td><td>23.3°</td><td>50%</td></tr>
-            <tr><td>Zimmer 13</td><td>25.November 2018 11:30</td><td>23.3°</td><td>50%</td></tr>
-            <tr><td>Zimmer 13</td><td>25.November 2018 11:30</td><td>23.3°</td><td>50%</td></tr>
-            <tr><td>Zimmer 13</td><td>25.November 2018 11:30</td><td>23.3°</td><td>50%</td></tr>
-            <tr><td>Zimmer 23</td><td>03.Dezember 2018 10:05</td><td>25.3°</td><td>60%</td></tr>
-            <tr><td>Zimmer 11</td><td>05.Dezember 2018 09:21</td><td>23.3°</td><td>30%</td></tr>
-            <tr><td>Zimmer 17</td><td>07.Dezember 2018 20:09</td><td>23.3°</td><td>25%</td></tr>
-            <tr><td>Zimmer 17</td><td>07.Dezember 2018 20:09</td><td>23.3°</td><td>25%</td></tr>
-            <tr><td>Zimmer 17</td><td>07.Dezember 2018 20:09</td><td>23.3°</td><td>25%</td></tr>
-            <tr><td>Zimmer 17</td><td>07.Dezember 2018 20:09</td><td>23.3°</td><td>25%</td></tr>
-            <tr><td>Zimmer 17</td><td>07.Dezember 2018 20:09</td><td>23.3°</td><td>25%</td></tr>
-            <tr><td>Zimmer 32</td><td>10.Dezember 2018 12:00</td><td>23.3°</td><td>28%</td></tr>
-            <tr><td>Zimmer 32</td><td>10.Dezember 2018 12:00</td><td>23.3°</td><td>28%</td></tr>
-            <tr><td>Zimmer 32</td><td>10.Dezember 2018 12:00</td><td>23.3°</td><td>28%</td></tr>
-            <tr><td>Zimmer 32</td><td>10.Dezember 2018 12:00</td><td>23.3°</td><td>28%</td></tr>
-            <tr><td>Zimmer 32</td><td>10.Dezember 2018 12:00</td><td>23.3°</td><td>28%</td></tr>
-            <tr><td>Zimmer 31</td><td>12.Dezember 2018 12:30</td><td>23.3°</td><td>44%</td></tr>
+        <tbody id="table_content_sensor">
         </tbody>
     </table>
 </div>
