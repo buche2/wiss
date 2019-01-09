@@ -9,12 +9,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Menge</td>
-          <td><img src="Bildpfad" >Artikelname</td>
-          <td>Einzelpreis kosten</td>
-          <td>Einzelpreis Kosten * Menge = Gesamtkosten</td>
-        </tr>
+      <?php
+
+      foreach($this->cart->getItems() as $item){
+        echo <<<ITEM
+        <tr>
+          <td>{$item->getCount()}</td>
+            <td><img src="Bildpfad" >{$item->getProduct()->name}</td>
+            <td>{$item->getProduct()->price}</td>
+            <td>{$item->amount()}</td>
+          </tr>
+
+ITEM;
+      }
+      ?>
       </tbody>
   </table>
 </form>

@@ -130,7 +130,10 @@ class AbstractModel{
         $prepared = $this->pdo->prepare("select * from " . $this->table . " where $pk = ?;" );
         $prepared->execute([$reflectionClass->getProperty($pk)->getValue($this)]);
         $result = $prepared->fetchAll(\PDO::FETCH_ASSOC);
-        return $this->intoVariables($result)[0];
+        $tmp = $this->intoVariables($result);
+        if(is_array($tmp))
+          return $tmp[0];
+        return $tmp;
       }
     }
     return null;

@@ -24,14 +24,16 @@
       <div class="Beschreibung">
         <p>{$this->product->product_ldesc}</p>
       </div>
-      <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction()">Warenkorb</button>
+      <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction({$this->product->id})">Warenkorb</button>
 EOF;
     ?>
   </div>
 </div>
 
 <script>
-  function myFunction() {
+  function myFunction(productid) {
+    $.ajax('index.php?page=warenkorb&action=add&id='+productid);
+
     alert("Success! Ihr Atikel ist jetzt im Warenkorb");
   }
 </script>
