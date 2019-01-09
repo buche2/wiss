@@ -16,6 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="./assets/css/display.css">
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
