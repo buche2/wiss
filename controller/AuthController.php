@@ -76,5 +76,6 @@ class AuthController extends AbstractController{
           $content = parent::loadView('edit');
 
         parent::display($content);
+    }
   }
 }
