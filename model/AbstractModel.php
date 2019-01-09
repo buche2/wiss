@@ -97,7 +97,7 @@ class AbstractModel{
   /**
    * @param $where is get or post array which is used in where from select
    */
-  public function where($where){
+  public function where($where, $condition='and'){
     $reflectionClass = new \ReflectionClass($this->class);
 
     $query = 'select * from ' . $this->table . ' where ';
@@ -106,9 +106,9 @@ class AbstractModel{
     foreach($where as $key => $value){
       if($reflectionClass->hasProperty($key)){
         if(count($values)){
-            $query .= ' and ';
+            $query .= ' '.$condition.' ';
         }
-        $query .= $key . ' = ? ';
+        $query .= $key . ' like ? ';
         $values[] = $value;
       }
     }
@@ -225,7 +225,6 @@ class AbstractModel{
           $tableNames[] = strtolower($joinObject->getTableName());
         }
       }
-
       foreach($children as $key => $value){
         if($reflectionClass->hasProperty($key)){
           $property = $reflectionClass->getProperty($key);

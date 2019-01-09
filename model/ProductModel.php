@@ -11,6 +11,5 @@ class ProductModel extends AbstractModel{
   public $product_sdesc;
   public $product_ldesc;
   public $price;
-  public $picture;
 
 }
