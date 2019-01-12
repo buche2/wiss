@@ -9,4 +9,19 @@
     <version>1.0</version>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-tools-maven-plugin</artifactId>
+            <version>5.4.0.Final</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+    </dependencies>
+
 </project>
