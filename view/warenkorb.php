@@ -42,7 +42,7 @@ ITEM;
           <td></td>
           <td></td>
           <td></td>
-          <td><a href="?page=bestellung" class="btn btn-primary">Zur Kasse</a></td>
+          <td><a href="?page=bestellung" class="btn btn-primary">Zur Kasse <i class="fas fa-cash-register"></i></a></td>
         </tr>
       </thead>
 ITEM;

@@ -17,7 +17,7 @@
     <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/display.css">
-  
+
     <!-- CSS for Logos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -60,7 +60,7 @@
               </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="index.php?page=shop">Shop <span class="sr-only">(current)</span></a>
-              <a class="dropdown-item" href="index.php?page=warenkorb">Waren Korb <i class="fas fa-shopping-cart"></i></a>
+              <a class="dropdown-item" href="index.php?page=warenkorb">Warenkorb <i class="fas fa-shopping-cart"></i></a>
             </div>
             </li>
 
