@@ -17,6 +17,9 @@
     <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/display.css">
+  
+    <!-- CSS for Logos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -47,9 +50,22 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.php?page=forum">Forum <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php?page=shop">Shop <span class="sr-only">(current)</span></a>
+
+
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Shop
+              </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="index.php?page=shop">Shop <span class="sr-only">(current)</span></a>
+              <a class="dropdown-item" href="index.php?page=warenkorb">Waren Korb <i class="fas fa-shopping-cart"></i></a>
+            </div>
             </li>
+
+
+
             <li class="nav-item">
               <a class="nav-link" href="index.php?page=kontakt">Kontakt</a>
             </li>
@@ -57,6 +73,7 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>-->
           </ul>
+
           <?php
 
           use wiss\helper\Session;
@@ -81,7 +98,6 @@
 EOF;
           }
            ?>
-
 
           <form class="form-inline mt-2 mt-md-0" action="" method="get">
             <input type="hidden" name="page" value="search">

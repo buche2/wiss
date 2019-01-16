@@ -24,8 +24,8 @@
       <div class="Beschreibung">
         <p>{$this->product->product_ldesc}</p>
       </div>
-      <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction({$this->product->id})">Warenkorb</button>
-      <a href="index.php?page=shop"><button type="button" class="btn btn-outline-primary">Weiter Shoppen</button></a>
+      <button type="button" class="btn btn-outline-success" name="Warenkorb" onclick="myFunction({$this->product->id})">Warenkorb <i class="fas fa-cart-plus"></i></button>
+      <a href="index.php?page=shop"><button type="button" class="btn btn-outline-primary">Weiter Shoppen <i class="fas fa-arrow-right"></i></button></a>
 EOF;
     ?>
   </div>
