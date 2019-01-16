@@ -1,3 +1,26 @@
 img{
   mix-blend-mode: multiply;
 }
+
+@keyframes warenkorb, @-webkit-keyframes warenkorb  {
+  from: {
+    position: relative;
+    right: 0px;
+    top: 0px;
+    background-color: green;
+  }
+  to: {
+    position: relative;
+    right: 100px;
+    top: 0px;
+    background-color: red;
+  }
+}
+
+.btn{
+  position: relative;
+  right: 0px;
+  top: 0px;
+  animation-name: warenkorb;
+  animation-duration: 4s;
+}

@@ -8,11 +8,23 @@ class Request{
     return (count($_POST) == 0)? false: true;
   }
 
-  public static function getPost(){
+  public static function hasAttribute($attr){
+    if(isset($_POST[$attr]) || isset($_GET[$attr]))
+      return true;
+    return false;
+  }
+
+  public static function getPost($attr=null){
+    if($attr){
+      return $_POST[$attr];
+    }
     return $_POST;
   }
 
-  public static function getGet(){
+  public static function getGet($attr=null){
+    if($attr){
+      return $_GET[$attr];
+    }
     return $_GET;
   }
 
