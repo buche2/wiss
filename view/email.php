@@ -342,15 +342,15 @@
                     <tr>
                       <td>
                         <p>Hallo <?php echo $this->user->name ?></p>
-                        <p>Wir danken für Ihre Benachrichtigung</p>
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                        <p>Wir danken f&uuml;r Ihre Benachrichtigung</p>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                           <tbody>
                             <tr>
                               <td align="left">
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td>  </td>
+                                      <td>Mitteilung:</td><td><?php echo $this->mitteilung; ?></td>
                                     </tr>
                                   </tbody>
                                 </table>

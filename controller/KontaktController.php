@@ -25,10 +25,12 @@ class KontaktController extends AbstractController{
 			$name = $_POST["form_lastname"];
 			$email = $_POST["form_email"];
 			$Betreff = $_POST["form_betreff"];
-			$Mitteilung = $_POST["form_message"];
+			$this->mitteilung = $_POST["form_message"];
 
 			$this->user = new UserModel();
 			$this->user->name = $name;
+			$this->user->email = $email;
+
 			$message = parent::loadView('email');
 
 			$this->email($this->user, Request::getPost('form_betreff'), $message);
