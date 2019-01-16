@@ -1,4 +1,4 @@
-<form name="Kontaktformular" method="post" >
+<form name="Kontaktformular" method="post" action="?page=kontakt&action=send">
 
   <h1 class="mt-5">Kontaktformular</h1>  
 
@@ -13,25 +13,25 @@
               
     <div class="form-group" >
         <label for="form_name">Vorname *</label>
-        <input id="form_name" type="text" name="name" class="form-control" placeholder="Vorname" required="required" data-error="Vorname ist erforderlich.">
+        <input id="form_name" type="text" name="form_name" class="form-control" placeholder="Vorname" required="required" data-error="Vorname ist erforderlich.">
     </div>     
     <div class="form-group">
         <label for="form_lastname">Name *</label>
-        <input id="form_lastname" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Name ist erforderlich.">
+        <input id="form_lastname" type="text" name="form_lastname" class="form-control" placeholder="Name" required="required" data-error="Name ist erforderlich.">
     </div>
     <div class="form-group">
         <label for="form_email">Email *</label>
-        <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Email is erforderlich.">
+        <input id="form_email" type="email" name="form_email" class="form-control" placeholder="Email" required="required" data-error="Email is erforderlich.">
     </div>
     <div class="form-group">
         <label for="form_betreff">Betreff</label>
-        <input id="form_betreff" type="text" name="surname" class="form-control" placeholder="Name"  data-error="Betreff">
+        <input id="form_betreff" type="text" name="form_betreff" class="form-control" placeholder="Name"  data-error="Betreff">
     </div>
     <div class="form-group">
         <label for="form_message">Mitteilung *</label>
-        <textarea id="form_message" name="message" class="form-control" placeholder="Text" rows="4" required="required" data-error="Schreib uns eine Mitteilung"></textarea>
+        <textarea id="form_message" name="form_message" class="form-control" placeholder="Text" rows="4" required="required" data-error="Schreib uns eine Mitteilung"></textarea>
     </div>
-        <input type="submit" class="btn btn-primary" value="Senden">
+        <input id="submit" name="submit" type="submit" class="btn btn-primary" value="Senden">
           <p class="text-muted">
             <strong>*</strong> Diese Felder müssen ausgefühlt sein.
           </p>

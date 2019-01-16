@@ -61,4 +61,5 @@ class KontaktController extends AbstractController{
 			parent::display($content);
 		}
 	}
+
 }
