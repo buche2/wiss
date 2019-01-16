@@ -1,0 +1,1 @@
+<div class="alert alert-success" role="alert">Mail gesendet</div>
