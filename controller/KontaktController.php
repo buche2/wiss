@@ -22,7 +22,7 @@ class KontaktController extends AbstractController{
 			$mail = new PHPMailer(false);                          // Passing `true` enables exceptions
 
 		    $an = "wissmodul133@gmail.com";
-		    $Vorname = $_POST["form_name"];  
+		    $Vorname = $_POST["form_name"];
 		    $name = $_POST["form_lastname"];
 		    $email = $_POST["form_email"];
 		    $Betreff = $_POST["form_betreff"];
@@ -41,6 +41,7 @@ class KontaktController extends AbstractController{
 
 		    //Recipients
 		    $mail->setFrom( $email, $Vorname, $name);
+				$mail->addAddress($email);
 		    $mail->addAddress('wissmodul133@gmail.com');          // Add a recipient
 		    //$mail->addAddress('ellen@example.com');             // Name is optional
 		    //$mail->addReplyTo('info@example.com', 'Information');
@@ -57,7 +58,7 @@ class KontaktController extends AbstractController{
 		    $mail->send();
 		    $this->title = "Kontakt send";
 			$content = parent::loadView('send');
-			parent::display($content);	
+			parent::display($content);
 		}
 	}
 }
