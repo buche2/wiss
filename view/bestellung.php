@@ -60,13 +60,11 @@
     <form method="post">
       <h2>Zahlungsangaben</h2>
         <label for="Methode">Zahlungmethode*</label>
-          <select name="Zahlungmethode" id="zahlung" required class="form-control">
-            <option value="">Auswahl...</option>
-            <option value="VI">Visa</option>
-            <option value="MC">Mastercard</option>
-            <option value="AE">American Express</option>
-            <option value="Pp">Paypal</option>
-          </select>
+        <input type="radio" name="Visa" >
+        <input type="radio" name="Mastercard" >
+        <input type="radio" name="American Express" >
+        <input type="radio" name="Paypal" >
+        <input type="radio" name="Bitcoin" checked><br>
         <label for="Nummer">Kartennummer*</label>
           <input type="text" name="Kartennummer" class="form-control" placeholder="z.b 12345" min="12" max="16" required>
         <label for="Nummer">Ablaufdatum*</label>
