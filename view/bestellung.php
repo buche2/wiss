@@ -59,12 +59,22 @@
   <div id="tabs-2">
     <form method="post">
       <h2>Zahlungsangaben</h2>
-        <label for="Methode">Zahlungmethode*</label>
-        <input type="radio" name="Visa" >
-        <input type="radio" name="Mastercard" >
-        <input type="radio" name="American Express" >
-        <input type="radio" name="Paypal" >
-        <input type="radio" name="Bitcoin" checked><br>
+        <label for="Methode">Zahlungmethode*</label><br>
+        <label style="font-size:25px;">
+          <input type="radio" name="optradio"><i class="fab fa-cc-visa"></i>
+        </label>
+        <label style="font-size:25px;" class="radio-inline">
+          <input type="radio" name="optradio" checked><i class="fab fa-cc-mastercard"></i>
+        </label>
+        <label style="font-size:25px;" class="radio-inline">
+          <input type="radio" name="optradio"><i class="fab fa-cc-amex"></i>
+        </label>
+        <label style="font-size:25px;" class="radio-inline">
+          <input type="radio" name="optradio"><i class="fab fa-cc-paypal"></i>
+        </label>
+        <label style="font-size:25px;" class="radio-inline">
+          <input type="radio" name="optradio"><i class="fab fa-btc"></i>
+        </label><br>
         <label for="Nummer">Kartennummer*</label>
           <input type="text" name="Kartennummer" class="form-control" placeholder="z.b 12345" min="12" max="16" required>
         <label for="Nummer">Ablaufdatum*</label>
