@@ -21,15 +21,7 @@ public class ExamServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //Highscore h = new Highscore("Diego");
-        //highscoreRepository.save(h);
 
-        List<Highscore> highscoreList = highscoreRepository.findAllByNameLike("%Di%");
-        
-
-        for(Highscore h : highscoreList){
-            System.out.println(h.getName());
-        }
 
     }
 }
