@@ -3,7 +3,9 @@ package ch.wiss.exam.exam.model;
 import ch.wiss.exam.auth.model.Grade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Exam {
@@ -22,17 +24,16 @@ public class Exam {
     private Grade grade;
 
     @OneToMany(fetch = FetchType.EAGER)
-    private Solution solution;
+    private List<Solution> solution = new ArrayList<>();
 
     public Exam() {
 
     }
 
-    public Exam(Date date, String file, Grade grade, Solution solution) {
+    public Exam(Date date, String file, Grade grade) {
         this.date = date;
         this.file = file;
         this.grade = grade;
-        this.solution = solution;
     }
 
     public Integer getId() {
@@ -61,5 +62,9 @@ public class Exam {
 
     public void setGrade(Grade grade) {
         this.grade = grade;
+    }
+
+    public List<Solution> getSolutions() {
+        return solution;
     }
 }
