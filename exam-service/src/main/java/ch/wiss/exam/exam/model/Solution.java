@@ -19,19 +19,14 @@ public class Solution {
 
     private Date date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "examFk")
-    private Exam exam;
-
 
     public Solution() {
 
     }
 
-    public Solution(String file, Date date, User student, Exam exam) {
+    public Solution(String file, Date date, User student) {
         this.file = file;
         this.date = date;
-        this.exam = exam;
     }
 
     public Integer getId() {
@@ -54,11 +49,4 @@ public class Solution {
         this.date = date;
     }
 
-    public Exam getExam() {
-        return exam;
-    }
-
-    public void setExam(Exam exam) {
-        this.exam = exam;
-    }
 }

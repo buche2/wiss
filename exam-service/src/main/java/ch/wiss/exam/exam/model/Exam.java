@@ -21,14 +21,18 @@ public class Exam {
     @JoinColumn(name = "gradeFk")
     private Grade grade;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    private Solution solution;
+
     public Exam() {
 
     }
 
-    public Exam(Date date, String file, Grade grade) {
+    public Exam(Date date, String file, Grade grade, Solution solution) {
         this.date = date;
         this.file = file;
         this.grade = grade;
+        this.solution = solution;
     }
 
     public Integer getId() {
