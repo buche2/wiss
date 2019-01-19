@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @Api(value="Userservice", description="Operations pertaining to user in exam")
 public class User {
@@ -15,13 +17,18 @@ public class User {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public ch.wiss.exam.auth.model.User login(String username, String password){
         try {
             return userService.login(username, password);
         }catch(Exception e){
             return null;
         }
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public List<ch.wiss.exam.auth.model.User> login(){
+        return userService.findAll();
     }
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)

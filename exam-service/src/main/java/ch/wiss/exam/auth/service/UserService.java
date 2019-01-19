@@ -4,6 +4,7 @@ import ch.wiss.exam.auth.model.Grade;
 import ch.wiss.exam.auth.model.User;
 import ch.wiss.exam.auth.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,11 +39,15 @@ public class UserService {
         }
     }
 
+    public List<User> findAll(){
+        return userRepository.findAll(Sort.by(Sort.Order.desc("name")));
+    }
+
     public void createTestUser(){
         Grade grade = new Grade("UIFZ-825");
         User user = new User("Buchs", "Enrico", "buchs.enrico@gmail.com","password1234", grade);
 
-        userRepository.save(user);
+        userRepository.saveAndFlush(user);
     }
 
 
