@@ -29,6 +29,15 @@ public class UserService {
         }
     }
 
+    public User byId(Integer id) throws Exception{
+        Optional<User> userOptional = userRepository.findById(id);
+        if(userOptional.isPresent()){
+            return userOptional.get();
+        }else{
+            throw new Exception("No user found");
+        }
+    }
+
     public void createTestUser(){
         Grade grade = new Grade("UIFZ-825");
         User user = new User("Buchs", "Enrico", "buchs.enrico@gmail.com","password1234", grade);

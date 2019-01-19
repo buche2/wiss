@@ -6,6 +6,7 @@ import ch.wiss.exam.auth.model.User;
 import javax.persistence.*;
 import java.util.Date;
 
+
 @Entity
 public class Solution {
 
