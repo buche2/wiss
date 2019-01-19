@@ -34,7 +34,7 @@ public class User {
     }
 
 
-    @RequestMapping("/user/test")
+    @RequestMapping(value = "/user/test", method = RequestMethod.GET)
     public void testCreate(){
         userService.createTestUser();
     }
