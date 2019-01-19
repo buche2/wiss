@@ -15,7 +15,7 @@ public class User {
     private String username;
     private String password;
 
-    @ManyToOne(optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "gradeFk")
     private Grade grade;
 

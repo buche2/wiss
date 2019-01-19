@@ -10,19 +10,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class ExamServiceApplication implements CommandLineRunner {
+// implements CommandLineRunner
+public class ExamServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ExamServiceApplication.class, args);
     }
 
-    @Autowired
-    private HighscoreRepository highscoreRepository;
-
+    /*
     @Override
     public void run(String... args) throws Exception {
 
 
-    }
+    }*/
 }
 
