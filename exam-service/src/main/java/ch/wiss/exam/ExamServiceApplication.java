@@ -1,7 +1,5 @@
 package ch.wiss.exam;
 
-import ch.wiss.exam.model.Highscore;
-import ch.wiss.exam.repositories.HighscoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
