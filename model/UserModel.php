@@ -14,5 +14,6 @@ class UserModel extends AbstractModel{
   public $username;
   public $password;
   public $birthdate;
+  public $private = 0;
 
 }

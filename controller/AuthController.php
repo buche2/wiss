@@ -62,12 +62,17 @@ class AuthController extends AbstractController{
 
   public function edit(){
       $title = "Edit profile";
+
+      $this->user = Session::get('auth');
+
       $content = parent::loadView('edit');
 
     if(Request::isPost()){
-        $usermodel = new UserModel();
+        $usermodel = Session::get('auth');
+        $_POST['birthdate'] = (new \DateTime($_POST['birthdate']))->format('Y-m-d');
         $usermodel->intoVariables([Request::getPost()]);
-        $usermodel->where(Request::getPost());
+        $usermodel->save();
+
         if($usermodel->id){
           Session::save('auth',$usermodel);
           $content = parent::loadView('index');
@@ -78,5 +83,22 @@ class AuthController extends AbstractController{
     }
     parent::display($content);
 
+  }
+
+  public function private() {
+    $title = "Privatsphäre";
+    
+    $content = parent::loadView('private');
+
+    /*if (Request::isGet()){
+      if() {}
+         $usermodel = Session::get('auth');
+        $usermodel
+      }
+  */
+
+
+
+    parent::display($content);
   }
 }
