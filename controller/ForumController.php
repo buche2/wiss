@@ -54,7 +54,7 @@ class ForumController extends AbstractController{
       $_POST['user_id'] = Session::get("auth")->id;
       $_POST['entry_date'] = (new \DateTime())->format('Y-m-d');
       if(Request::hasAttribute('forum_id')){
-        $_POST['forum_id'] = Request::getGet('forum_id');
+        $_POST['forum_id'] = Request::get('forum_id');
       }
       $entry->intoVariables([Request::getPost()]);
 

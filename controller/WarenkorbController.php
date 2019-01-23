@@ -14,7 +14,9 @@ class WarenkorbController extends AbstractController{
   public $title = 'Warenkorb';
 
   public function __construct(){
-
+        if(!Session::has('warenkorb')){
+          Session::save('warenkorb', new Cart());
+        }
   }
 
   public function index(){
@@ -30,9 +32,6 @@ class WarenkorbController extends AbstractController{
     $product->id = $id;
     $product->fetchOne();
 
-    if(!Session::has('warenkorb')){
-      Session::save('warenkorb', new Cart());
-    }
     $cart = Session::get('warenkorb');
     $cart->addItem($product);
 

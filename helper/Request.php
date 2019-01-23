@@ -14,6 +14,14 @@ class Request{
     return false;
   }
 
+  public static function get($attr){
+    if(isset($_POST[$attr]))
+      return $_POST[$attr];
+    else if(isset($_GET[$attr]))
+      return $_GET[$attr];
+    return false;
+  }
+
   public static function getPost($attr=null){
     if($attr){
       return $_POST[$attr];
