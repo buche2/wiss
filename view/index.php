@@ -41,7 +41,7 @@ if(!Session::has('auth')){
       </div>
       <div class="col-4">
         <div style="text-align:center;">
-          <label>Willst du unser tollen Produkte kaufen?<br> Dann Klick hier!</label><br>
+          <label>Willst du unsere tollen Produkte kaufen?<br> Dann Klick hier!</label><br>
           <button type="submit" class="btn btn-secondary"><a href="index.php?page=shop" style="color:white;text-decoration:none;">Shop</a></button>
         </div>
       </div>
