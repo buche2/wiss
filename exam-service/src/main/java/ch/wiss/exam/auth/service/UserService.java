@@ -26,7 +26,7 @@ public class UserService {
         if(userOptional.isPresent()){
             return userOptional.get();
         }else{
-            throw new Exception("Login fehlgeschlagen");
+            throw new Exception("\"Username or password incorrect.\"");
         }
     }
 
