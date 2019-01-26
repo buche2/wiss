@@ -3,7 +3,9 @@ package ch.wiss.exam.exam.model;
 import ch.wiss.exam.auth.model.Grade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Exam {
@@ -20,6 +22,9 @@ public class Exam {
     @ManyToOne(optional = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "gradeFk")
     private Grade grade;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Solution> solution = new ArrayList<>();
 
     public Exam() {
 
@@ -57,5 +62,9 @@ public class Exam {
 
     public void setGrade(Grade grade) {
         this.grade = grade;
+    }
+
+    public List<Solution> getSolutions() {
+        return solution;
     }
 }
