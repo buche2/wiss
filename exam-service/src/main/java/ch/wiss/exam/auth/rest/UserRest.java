@@ -1,5 +1,6 @@
 package ch.wiss.exam.auth.rest;
 
+import ch.wiss.exam.auth.model.User;
 import ch.wiss.exam.auth.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RestController
 @Api(value="Userservice", description="Operations pertaining to user in exam")
-public class User {
+public class UserRest {
 
     @Autowired
     private UserService userService;
@@ -46,4 +47,8 @@ public class User {
         userService.createTestUser();
     }
 
+    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
+    public User register (User user){
+        return userService.register(user);
+    }
 }

@@ -50,5 +50,12 @@ public class UserService {
         userRepository.saveAndFlush(user);
     }
 
-
+    public User register(User user) throws Exception{
+        if (true) {
+            userRepository.saveAndFlush(user);
+            return user;
+        }else{
+            throw new Exception("User allready exists.");
+        }
+    }
 }
