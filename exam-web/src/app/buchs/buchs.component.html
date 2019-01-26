@@ -1,0 +1,13 @@
+<input [(ngModel)]="book"><button (click)="addBook()">Add Book</button>
+
+
+
+
+
+<p *ngIf="user != null">
+  {{user.name}} {{user.role.toString()}} {{user.id}}
+</p>
+
+<ul>
+  <li *ngFor="let b of books()">{{b}}</li>
+</ul>
