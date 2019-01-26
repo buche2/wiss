@@ -1,5 +1,4 @@
 import {Component, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {SearchService} from '../services/search.service';
 import {debounceTime} from 'rxjs/operators';
 import {Form} from '@angular/forms';
 import {setOffsetToUTC} from 'ngx-bootstrap/chronos/units/offset';
