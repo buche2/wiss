@@ -23,7 +23,10 @@ export class BuchsComponent implements OnInit {
   }
 
   constructor(private userService: UserService) {
-    this.userService.byIdUsingGET(1).subscribe((user: User) => this.user = user);
+    this.userService.byIdUsingGET(1).subscribe((user: User) => {
+      setTimeout(() => { this.user = user; }, 2000);
+
+    });
   }
 
   ngOnInit() {
