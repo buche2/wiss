@@ -8,8 +8,41 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/auth" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/teacher" routerLinkActive="active">Catalog</a>
+      <li class="nav-item btn-group" dropdown>
+        <a dropdownToggle class="nav-link dropdown-toggle"
+           aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
+          Teacher <span class="caret"></span>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-create" routerLinkActive="active">exam-create</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-liste" routerLinkActive="active">exam-list</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-download" routerLinkActive="active">exam-download</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item btn-group" dropdown>
+        <a dropdownToggle class="nav-link dropdown-toggle"
+           aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
+          Student <span class="caret"></span>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/student/exam-download" routerLinkActive="active">student-download</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/student/exam-upload" routerLinkActive="active">student-upload</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item btn-group" dropdown>
+        <a dropdownToggle class="nav-link dropdown-toggle"
+           aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
+          Admin <span class="caret"></span>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/admin/role" routerLinkActive="active">role</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/admin/user" routerLinkActive="active">user</a></li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/student" routerLinkActive="active">{{'Cart' | translate}}</a>
@@ -25,8 +58,5 @@
         </ul>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" #searchForm="ngForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchTerm" ngModel>
-    </form>
   </div>
 </nav>
