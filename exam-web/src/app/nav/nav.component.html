@@ -15,7 +15,7 @@
         </a>
         <ul *dropdownMenu class="dropdown-menu"
             role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-create" routerLinkActive="active">exam-create</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-create" routerLinkActive="active">{{'exam-create' | translate}}</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-liste" routerLinkActive="active">exam-list</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/teacher/exam-download" routerLinkActive="active">exam-download</a></li>
         </ul>
@@ -43,9 +43,6 @@
           <li role="menuitem"><a class="dropdown-item" routerLink="/admin/role" routerLinkActive="active">role</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/admin/user" routerLinkActive="active">user</a></li>
         </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/student" routerLinkActive="active">{{'Cart' | translate}}</a>
       </li>
       <li class="nav-item btn-group" dropdown>
         <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle"
