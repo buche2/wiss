@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
-import {BsDropdownModule, ModalModule} from 'ngx-bootstrap';
+import {AccordionModule, BsDatepickerModule, BsDropdownModule, ModalModule, PaginationModule, TooltipModule} from 'ngx-bootstrap';
 import {FormsModule} from '@angular/forms';
 import { BuchsComponent } from './buchs/buchs.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
@@ -35,6 +35,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    AccordionModule.forRoot(),
+    PaginationModule.forRoot(),
+    TooltipModule.forRoot(),
     ModalModule.forRoot(),
     FormsModule,
     HttpClientModule,
