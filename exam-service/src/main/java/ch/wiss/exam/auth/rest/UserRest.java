@@ -49,6 +49,10 @@ public class UserRest {
 
     @RequestMapping(value = "/user/register", method = RequestMethod.POST)
     public User register (User user){
-        return userService.register(user);
+        try {
+            return userService.register(user);
+        }catch(Exception e){
+            return null;
+        }
     }
 }
