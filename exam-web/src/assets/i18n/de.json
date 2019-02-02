@@ -1,3 +1,13 @@
 {
- "exam-create": "Prüfung erstellen"
+ "exam-create": "Prüfung erstellen",
+  "register": "Registrieren",
+  "Create ExamWebApp-Account": "ExamWebApp-Konto erstellen",
+  "firstname": "Vorname",
+  "name": "Nachname",
+  "e-mail adress": "E-Mail Adresse",
+  "create password": "Passwort erstellen",
+  "repeat password": "Passwort wiederholen",
+  "Have an account?": "Hast du schon einen account?",
+  " Log in": " Einloggen",
+  "Create account": "Account erstellen"
 }

@@ -1,0 +1,5 @@
+<input [(ngModel)]="book"><button (click)="addBook()">Add book</button>
+[(ngModel)]="book"
+<ul>
+  <li *ngFor="let b of getBooks()">{{b}}</li>
+</ul>
