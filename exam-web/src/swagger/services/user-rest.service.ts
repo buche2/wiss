@@ -15,7 +15,7 @@ import { User } from '../models/user';
 @Injectable({
   providedIn: 'root',
 })
-class UserService extends __BaseService {
+class UserRestService extends __BaseService {
   constructor(
     config: __Configuration,
     http: HttpClient
@@ -57,7 +57,7 @@ class UserService extends __BaseService {
   }
 
   /**
-   * @param params The `UserService.LoginUsingPOSTParams` containing the following parameters:
+   * @param params The `UserRestService.LoginUsingPOSTParams` containing the following parameters:
    *
    * - `username`: username
    *
@@ -65,7 +65,7 @@ class UserService extends __BaseService {
    *
    * @return OK
    */
-  loginUsingPOSTResponse(params: UserService.LoginUsingPOSTParams): __Observable<__StrictHttpResponse<User>> {
+  loginUsingPOSTResponse(params: UserRestService.LoginUsingPOSTParams): __Observable<__StrictHttpResponse<User>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -89,7 +89,7 @@ class UserService extends __BaseService {
     );
   }
   /**
-   * @param params The `UserService.LoginUsingPOSTParams` containing the following parameters:
+   * @param params The `UserRestService.LoginUsingPOSTParams` containing the following parameters:
    *
    * - `username`: username
    *
@@ -97,12 +97,89 @@ class UserService extends __BaseService {
    *
    * @return OK
    */
-  loginUsingPOST(params: UserService.LoginUsingPOSTParams): __Observable<User> {
+  loginUsingPOST(params: UserRestService.LoginUsingPOSTParams): __Observable<User> {
     return this.loginUsingPOSTResponse(params).pipe(
       __map(_r => _r.body as User)
     );
   }
-  testCreateUsingGETResponse(): __Observable<__StrictHttpResponse<null>> {
+
+  /**
+   * @param params The `UserRestService.RegisterUsingPOSTParams` containing the following parameters:
+   *
+   * - `username`:
+   *
+   * - `role`:
+   *
+   * - `password`:
+   *
+   * - `name`:
+   *
+   * - `id`:
+   *
+   * - `grade.name`:
+   *
+   * - `grade.id`:
+   *
+   * - `firstname`:
+   *
+   * @return OK
+   */
+  registerUsingPOSTResponse(params: UserRestService.RegisterUsingPOSTParams): __Observable<__StrictHttpResponse<User>> {
+    let __params = this.newParams();
+    let __headers = new HttpHeaders();
+    let __body: any = null;
+    if (params.username != null) __params = __params.set('username', params.username.toString());
+    if (params.role != null) __params = __params.set('role', params.role.toString());
+    if (params.password != null) __params = __params.set('password', params.password.toString());
+    if (params.name != null) __params = __params.set('name', params.name.toString());
+    if (params.id != null) __params = __params.set('id', params.id.toString());
+    if (params.gradeName != null) __params = __params.set('grade.name', params.gradeName.toString());
+    if (params.gradeId != null) __params = __params.set('grade.id', params.gradeId.toString());
+    if (params.firstname != null) __params = __params.set('firstname', params.firstname.toString());
+    let req = new HttpRequest<any>(
+      'POST',
+      this.rootUrl + `/user/register`,
+      __body,
+      {
+        headers: __headers,
+        params: __params,
+        responseType: 'json'
+      });
+
+    return this.http.request<any>(req).pipe(
+      __filter(_r => _r instanceof HttpResponse),
+      __map((_r) => {
+        return _r as __StrictHttpResponse<User>;
+      })
+    );
+  }
+  /**
+   * @param params The `UserRestService.RegisterUsingPOSTParams` containing the following parameters:
+   *
+   * - `username`:
+   *
+   * - `role`:
+   *
+   * - `password`:
+   *
+   * - `name`:
+   *
+   * - `id`:
+   *
+   * - `grade.name`:
+   *
+   * - `grade.id`:
+   *
+   * - `firstname`:
+   *
+   * @return OK
+   */
+  registerUsingPOST(params: UserRestService.RegisterUsingPOSTParams): __Observable<User> {
+    return this.registerUsingPOSTResponse(params).pipe(
+      __map(_r => _r.body as User)
+    );
+  }
+  testCreateUsingGET1Response(): __Observable<__StrictHttpResponse<null>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -122,8 +199,8 @@ class UserService extends __BaseService {
         return _r as __StrictHttpResponse<null>;
       })
     );
-  }  testCreateUsingGET(): __Observable<null> {
-    return this.testCreateUsingGETResponse().pipe(
+  }  testCreateUsingGET1(): __Observable<null> {
+    return this.testCreateUsingGET1Response().pipe(
       __map(_r => _r.body as null)
     );
   }
@@ -165,7 +242,7 @@ class UserService extends __BaseService {
   }
 }
 
-module UserService {
+module UserRestService {
 
   /**
    * Parameters for loginUsingPOST
@@ -182,6 +259,20 @@ module UserService {
      */
     password?: string;
   }
+
+  /**
+   * Parameters for registerUsingPOST
+   */
+  export interface RegisterUsingPOSTParams {
+    username?: string;
+    role?: 'ADMIN' | 'TEACHER' | 'STUDENT';
+    password?: string;
+    name?: string;
+    id?: number;
+    gradeName?: string;
+    gradeId?: number;
+    firstname?: string;
+  }
 }
 
-export { UserService }
+export { UserRestService }

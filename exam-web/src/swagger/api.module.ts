@@ -4,7 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiConfiguration } from './api-configuration';
 
 import { BasicErrorControllerService } from './services/basic-error-controller.service';
-import { UserService } from './services/user.service';
+import { ExamRestService } from './services/exam-rest.service';
+import { SolutionRestService } from './services/solution-rest.service';
+import { UserRestService } from './services/user-rest.service';
 
 /**
  * Provider for all Api services, plus ApiConfiguration
@@ -20,7 +22,9 @@ import { UserService } from './services/user.service';
   providers: [
     ApiConfiguration,
     BasicErrorControllerService,
-    UserService
+    ExamRestService,
+    SolutionRestService,
+    UserRestService
   ],
 })
 export class ApiModule { }

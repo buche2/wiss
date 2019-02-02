@@ -33,7 +33,7 @@
       <input class="form-control" placeholder="{{'repeat password' | translate}}" [(ngModel)]="user.password" type="password">
     </div> <!-- form-group// -->
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block"> {{'Create account' | translate}} </button>
+      <button type="submit" class="btn btn-primary btn-block" (click)="addNewUser()"> {{'Create account' | translate}} </button>
     </div> <!-- form-group// -->
     <p class="text-center">{{'Have an account?' | translate}}<a routerLink="/admin" routerLinkActive="active">{{' Log in' | translate}}</a> </p>
   </form>
