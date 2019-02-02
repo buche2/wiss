@@ -9,6 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +34,18 @@ public class ExamService {
 
     public List<Exam> getExamsByGrade(Grade grade){
         return examRepository.findAllByGrade(grade);
+    }
+
+
+    public Exam createExam(Exam exam){
+        byte[] decodedImg = Base64.getDecoder().decode(exam.getFile().getBytes(StandardCharsets.UTF_8));
+        Path destinationFile = Paths.get("/assets/exam", "test.zip");
+        try {
+            Files.write(destinationFile, decodedImg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void createTestExam(){

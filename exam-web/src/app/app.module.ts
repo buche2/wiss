@@ -16,6 +16,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { ChangePwComponent } from './change-pw/change-pw.component';
 import {AuthGuard} from './auth/auth.guard';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthComponent,
     LogoutComponent,
     RegisterComponent,
-    ChangePwComponent
+    ChangePwComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

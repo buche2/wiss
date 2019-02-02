@@ -25,6 +25,15 @@ public class ExamRest {
 
     }
 
+    @RequestMapping(value = "/createExam", method = RequestMethod.POST)
+    public Exam createExam(Exam exam){
+        try {
+            return examService.createExam(exam);
+        }catch(Exception e){
+            return null;
+        }
+    }
+
     @RequestMapping(value = "/exam/{grade}", method = RequestMethod.POST)
     public List<Exam> getExamsByGrade(@PathVariable Grade grade){
         try {
