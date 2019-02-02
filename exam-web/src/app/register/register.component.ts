@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../swagger/services/user.service';
 import {User} from '../../swagger/models';
+import {UserRestService} from '../../swagger/services/user-rest.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
 
   user: User;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserRestService) {
 
     this.user = new class implements User {
       firstname: string;

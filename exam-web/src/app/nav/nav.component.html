@@ -21,7 +21,7 @@
         </ul>
       </li>
 
-      <li class="nav-item btn-group" dropdown>
+      <li class="nav-item btn-group" dropdown *ngIf="authGuard.forNavigation({roles: ['TEACHER']})">
         <a dropdownToggle class="nav-link dropdown-toggle"
            aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
           Student <span class="caret"></span>

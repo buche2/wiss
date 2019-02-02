@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../swagger/services/user.service';
 import {User} from '../../swagger/models/user';
 import {ActivatedRoute, Router} from '@angular/router';
+import {UserRestService} from '../../swagger/services/user-rest.service';
 
 @Component({
   selector: 'app-buchs',
@@ -24,7 +24,7 @@ export class BuchsComponent implements OnInit {
     return this._books;
   }
 
-  constructor(private userService: UserService, private activeRoute: ActivatedRoute, private router: Router) {
+  constructor(private userService: UserRestService, private activeRoute: ActivatedRoute, private router: Router) {
     this.userService.byIdUsingGET(1).subscribe((user: User) => {
       setTimeout(() => { this.user = user; }, 2000);
 

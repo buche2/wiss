@@ -3,6 +3,7 @@ import {debounceTime} from 'rxjs/operators';
 import {Form} from '@angular/forms';
 import {setOffsetToUTC} from 'ngx-bootstrap/chronos/units/offset';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthGuard} from '../auth/auth.guard';
 
 @Component({
   selector: 'app-nav',
@@ -15,7 +16,8 @@ export class NavComponent implements OnInit, OnChanges {
 
   @ViewChild('searchForm') searchForm;
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private router: Router, public activeRoute: ActivatedRoute, public authGuard: AuthGuard) {
+
   }
 
   ngOnInit() {

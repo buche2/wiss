@@ -6,31 +6,31 @@
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="{{'firstname' | translate}}" [(ngModel)]="user.firstname" type="text">
+      <input name="firstname" class="form-control" placeholder="{{'firstname' | translate}}" [(ngModel)]="user.firstname" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="{{'name' | translate}}" [(ngModel)]="user.name" type="text">
+      <input name="name" class="form-control" placeholder="{{'name' | translate}}" [(ngModel)]="user.name" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
       </div>
-      <input name="" class="form-control" placeholder="{{'e-mail adress' | translate}}" [(ngModel)]="user.username" type="email">
+      <input name="email" class="form-control" placeholder="{{'e-mail adress' | translate}}" [(ngModel)]="user.username" type="email">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
       </div>
-      <input class="form-control" placeholder="{{'create password' | translate}}" type="password">
+      <input name="password" class="form-control" placeholder="{{'create password' | translate}}" type="password">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
       <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
       </div>
-      <input class="form-control" placeholder="{{'repeat password' | translate}}" [(ngModel)]="user.password" type="password">
+      <input name="passwordRepeat" class="form-control" placeholder="{{'repeat password' | translate}}" [(ngModel)]="user.password" type="password">
     </div> <!-- form-group// -->
     <div class="form-group">
       <button type="submit" class="btn btn-primary btn-block"> {{'Create account' | translate}} </button>
