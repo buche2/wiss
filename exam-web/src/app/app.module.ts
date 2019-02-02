@@ -15,6 +15,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { ChangePwComponent } from './change-pw/change-pw.component';
+import {AuthGuard} from './auth/auth.guard';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,7 +51,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

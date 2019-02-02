@@ -18,7 +18,7 @@ application-dev.properties
 *.iws
 *.iml
 *.ipr
-
+cd
 ### NetBeans ###
 /nbproject/private/
 /build/
