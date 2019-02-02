@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController()
 @Api(value = "ExamService", description = "Operations with the exam")
 public class ExamRest {
 
@@ -33,4 +33,14 @@ public class ExamRest {
             return null;
         }
     }
+    @RequestMapping(value = "exam/test", method = RequestMethod.GET)
+    public void TestCreate(){examService.createTestExam();}
 }
+
+
+
+
+
+
+
+

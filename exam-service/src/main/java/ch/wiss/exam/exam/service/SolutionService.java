@@ -32,5 +32,6 @@ public class SolutionService {
         Solution solution = new Solution("Loesung123", date, user);
 
         solutionRepository.saveAndFlush(solution);
+
     }
 }

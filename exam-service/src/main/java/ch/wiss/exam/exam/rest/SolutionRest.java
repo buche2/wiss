@@ -28,10 +28,5 @@ public class SolutionRest {
     @RequestMapping(value = "/solution", method = RequestMethod.GET)
     public List<Solution> getAll(){
         return solutionService.getSolutions();
-
-
     }
-
-
-
 }
