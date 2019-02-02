@@ -8,7 +8,7 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/auth" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item btn-group" dropdown>
+      <li class="nav-item btn-group" dropdown *ngIf="authGuard.forNavigation({roles: ['TEACHER']})">
         <a dropdownToggle class="nav-link dropdown-toggle"
            aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
           Teacher <span class="caret"></span>
@@ -21,9 +21,9 @@
         </ul>
       </li>
 
-      <li class="nav-item btn-group" dropdown *ngIf="authGuard.forNavigation({roles: ['TEACHER']})">
+      <li class="nav-item btn-group" dropdown *ngIf="authGuard.forNavigation({roles: ['STUDENT']})">
         <a dropdownToggle class="nav-link dropdown-toggle"
-           aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
+           aria-controls="dropdown-basic" routerLink="/student" routerLinkActive="active">
           Student <span class="caret"></span>
         </a>
         <ul *dropdownMenu class="dropdown-menu"
@@ -33,9 +33,9 @@
         </ul>
       </li>
 
-      <li class="nav-item btn-group" dropdown>
+      <li class="nav-item btn-group" dropdown *ngIf="authGuard.forNavigation({roles: ['ADMIN']})">
         <a dropdownToggle class="nav-link dropdown-toggle"
-           aria-controls="dropdown-basic" routerLink="/teacher" routerLinkActive="active">
+           aria-controls="dropdown-basic" routerLink="/admin" routerLinkActive="active">
           Admin <span class="caret"></span>
         </a>
         <ul *dropdownMenu class="dropdown-menu"
@@ -51,7 +51,7 @@
         </a>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
             role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" routerLink="/admin" routerLinkActive="active">Login</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/auth" routerLinkActive="active">Login</a></li>
           <li role="menuitem"><a class="dropdown-item" routerLink="/register" routerLinkActive="active">{{'register' | translate}}</a></li>
         </ul>
       </li>
