@@ -26,39 +26,6 @@ class UserRestService extends __BaseService {
   /**
    * @return OK
    */
-  rolesUsingGETResponse(): __Observable<__StrictHttpResponse<Array<'ADMIN' | 'TEACHER' | 'STUDENT'>>> {
-    let __params = this.newParams();
-    let __headers = new HttpHeaders();
-    let __body: any = null;
-    let req = new HttpRequest<any>(
-      'GET',
-      this.rootUrl + `/roles`,
-      __body,
-      {
-        headers: __headers,
-        params: __params,
-        responseType: 'json'
-      });
-
-    return this.http.request<any>(req).pipe(
-      __filter(_r => _r instanceof HttpResponse),
-      __map((_r) => {
-        return _r as __StrictHttpResponse<Array<'ADMIN' | 'TEACHER' | 'STUDENT'>>;
-      })
-    );
-  }
-  /**
-   * @return OK
-   */
-  rolesUsingGET(): __Observable<Array<'ADMIN' | 'TEACHER' | 'STUDENT'>> {
-    return this.rolesUsingGETResponse().pipe(
-      __map(_r => _r.body as Array<'ADMIN' | 'TEACHER' | 'STUDENT'>)
-    );
-  }
-
-  /**
-   * @return OK
-   */
   loginUsingGETResponse(): __Observable<__StrictHttpResponse<Array<User>>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();

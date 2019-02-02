@@ -27,4 +27,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  addNewUser() {
+    console.log('Neuer User');
+    this.userService.registerUsingPOST(this.user).subscribe(user => this.user = user);
+  }
+
 }
