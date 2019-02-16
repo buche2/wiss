@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="service_number">Serviceauftragsnummer</string>
+    <string name="app_name">335 Anwendung</string>
+    <string name="customer_number">Kundennummer</string>
+</resources>

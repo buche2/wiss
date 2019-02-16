@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Serviceapp</string>
+    <string name="service_number">Service Number</string>
+    <string name="customer_number">Customer Number</string>
+</resources>
