@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -37,9 +38,11 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
     MainActivity mainActivity;
 
+    //Dieser Typ wird durch das Databinding selbst generiert => Build - Rebuild
     ActivityMainBinding binding;
 
 
+    //Wiederverwendbarer ClickListener
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -51,33 +54,37 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // da der aktuelle Kontext in mehreren Subkontexten verwendet wird.
+        // u.a. Listener Klassen ist dies eine günstige Art um das zu ermöglichen
         mainActivity = this;
 
+        //diese Methode wird beim Databinding nicht mehr verwendet
         //setContentView(R.layout.activity_main);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-
+        // setService ist möglich, weil die variable im Layout service heisst.
         binding.setService(DataHolder.service);
 
+        //manuelles verwenden der componenten
         //binding.button.setText("Auto");
         //binding.editText.setText("Edito");
 
-
-
-//        setContentView(R.layout.layout2);
-
-        ViewGroup v = findViewById(R.id.layout);
+        Toast.makeText(this, "Hallo welt", Toast.LENGTH_LONG).show();
 
         Button button = findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // neue Aktivität starten Siehe Kommentar Zeile 58
                 Intent intent = new Intent(mainActivity, Main2Activity.class);
                 startActivity(intent);
+                mainActivity.finish();
             }
         });
 
+        // Dynamisches finden von Elementen in der View
+//        ViewGroup v = findViewById(R.id.layout);
 //        for (int i = 0 ; i < v.getChildCount(); i++){
 //            View view = v.getChildAt(i);
 //            if(view instanceof Button) {

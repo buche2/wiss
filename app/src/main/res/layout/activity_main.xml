@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+tag layout ist erforderlich für das bidirektionale databinding
+dazu kann noch der namespace aus den ConstraintLayout hierhin verschoben werden
+ -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+        für das bidirektionale databinding
+        es ist möglich mehrere variablen zu deklarieren
+        für jede variable wird anhand des namens ein getter und setter generiert
+     -->
     <data>
         <variable
             name="service"
@@ -36,6 +45,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- @{service.firstname} lesender zugriff auf die variable -->
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -48,6 +58,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+        <!-- @={service.firstname} lesender und schreibender zugriff auf die variable -->
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
