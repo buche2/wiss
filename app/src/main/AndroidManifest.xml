@@ -19,4 +19,6 @@
         <activity android:name=".Main2Activity"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

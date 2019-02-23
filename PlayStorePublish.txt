@@ -1,0 +1,27 @@
+﻿https://play.google.com/apps/publish/
+
+Applikationstitel
+Kurze Beschreibung 80
+Vollständige Beschreibung 4000
+
+Screenshot min320px max3840px Seitenverhältnis max 2:1
+Symbol 512x512px 32Bit png
+Funktionsgrafik 1024x500px jpg od png24bit ohne alpha
+Werbegrafik 180x120px jpg od png24bit ohne alpha
+
+Link Youtube Werbevideo
+
+Kategorisierung
+AppTyp (App|Spiele)
+Kategorie (Foto,Gesundheit,Lernen,usw)
+
+Kontaktdaten
+EMAIL, Telefon
+
+APK erstellen
+Versionsnummer definieren
+Versionsbeschreibung erstellen 500
+
+
+Datenschutzerklärung
+Link zu Webseite
