@@ -10,6 +10,14 @@ public class Service extends BaseObservable {
     private String name = "Buchs";
     private String firstname = "Enrico";
 
+    public Service(){
+    }
+
+    public Service(String firstname, String name){
+        this.setFirstname(firstname);
+        this.setName(name);
+    }
+
     // sorgt dafür, dass es bidirektional gebunden werden kann
     @Bindable
     public String getName() {

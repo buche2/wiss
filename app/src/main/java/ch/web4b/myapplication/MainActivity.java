@@ -13,6 +13,8 @@ import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     //Dieser Typ wird durch das Databinding selbst generiert => Build - Rebuild
     ActivityMainBinding binding;
 
+    DataHolder holder;
 
     //Wiederverwendbarer ClickListener
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -51,12 +54,15 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         }
     };
 
+    SharedPreferences sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // da der aktuelle Kontext in mehreren Subkontexten verwendet wird.
         // u.a. Listener Klassen ist dies eine günstige Art um das zu ermöglichen
         mainActivity = this;
+        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
         //diese Methode wird beim Databinding nicht mehr verwendet
         //setContentView(R.layout.activity_main);
@@ -64,11 +70,46 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         // setService ist möglich, weil die variable im Layout service heisst.
+        holder.service = new Service(sharedPref.getString("name", "NONAME"),sharedPref.getString("name", "NONAME"));
+
         binding.setService(DataHolder.service);
+
+
+
+        Log.d("SharedPrefs", sharedPref.getString("name", "NONAME"));
+
+        binding.editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("name", binding.editText.getText().toString());
+                editor.commit();
+                Log.d("SharedPrefs", sharedPref.getString("name", "NONAME"));
+            }
+        });
 
         //manuelles verwenden der componenten
         //binding.button.setText("Auto");
         //binding.editText.setText("Edito");
+
+
+
+
+        //editor.putBoolean("mongodb", true);
+
+
+        Log.d("SharedPrefs", sharedPref.getString("mykey", ""));
+        Log.d("SharedPrefs", String.valueOf(sharedPref.getBoolean("mongodb", false)));
 
         Toast.makeText(this, "Hallo welt", Toast.LENGTH_LONG).show();
 
